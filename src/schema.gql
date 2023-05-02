@@ -1,0 +1,30 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Station {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+type Query {
+  stations: [Station!]!
+  station(id: Int!): Station!
+}
+
+type Mutation {
+  createStation(createStationInput: CreateStationInput!): Station!
+  updateStation(updateStationInput: UpdateStationInput!): Station!
+  removeStation(id: Int!): Station!
+}
+
+input CreateStationInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateStationInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
