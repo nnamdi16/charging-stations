@@ -6,6 +6,7 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { join } from 'path';
 import { StationsModule } from './stations/stations.module';
 import { DatabaseModule } from './database/database.module';
+import { ChargersModule } from './chargers/chargers.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { DatabaseModule } from './database/database.module';
     }),
     StationsModule,
     DatabaseModule,
+    ChargersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
