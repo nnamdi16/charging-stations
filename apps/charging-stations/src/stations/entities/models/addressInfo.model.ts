@@ -1,6 +1,6 @@
 import { ObjectType, Field, Int, ID } from '@nestjs/graphql';
 import { Prop, raw } from '@nestjs/mongoose';
-import { Country } from './country.type';
+import { Country } from './country.model';
 
 @ObjectType()
 export class AddressInfo {

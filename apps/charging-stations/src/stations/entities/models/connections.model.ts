@@ -1,9 +1,9 @@
 import { ObjectType, Field, Int, ID } from '@nestjs/graphql';
 import { Prop, raw } from '@nestjs/mongoose';
-import { ConnectionType } from './connectionType.type';
-import { StatusType } from './statusType.type';
-import { Level } from './level.type';
-import { CurrentType } from './currentType.type';
+import { ConnectionType } from './connectionType.model';
+import { StatusType } from './statusType.model';
+import { Level } from './level.model';
+import { CurrentType } from './currentType.model';
 
 @ObjectType()
 export class Connections {

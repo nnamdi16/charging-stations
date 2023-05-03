@@ -2,10 +2,10 @@ import { ObjectType, Field, Int } from '@nestjs/graphql';
 import { Prop, Schema, SchemaFactory, raw } from '@nestjs/mongoose';
 import { Exclude } from 'class-transformer';
 import { v4 as uuidv4 } from 'uuid';
-import { OperatorInfo } from './type/operatorInfo.type';
-import { StatusType } from './type/statusType.type';
-import { AddressInfo } from './type/addressInfo.type';
-import { Connections } from './type/connections.type';
+import { OperatorInfo } from './models/operatorInfo.model';
+import { StatusType } from './models/statusType.model';
+import { AddressInfo } from './models/addressInfo.model';
+import { Connections } from './models/connections.model';
 import { Types, Document } from 'mongoose';
 
 @ObjectType()
@@ -32,7 +32,7 @@ export class Station {
   addressInfo: AddressInfo;
 
   @Field((type) => [Connections])
-  @Prop(raw({ type: Connections, required: true }))
+  @Prop(raw({ type: [Connections], required: true }))
   connections: Connections[];
 }
 

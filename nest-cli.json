@@ -1,8 +1,55 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src",
+  "sourceRoot": "apps/charging-stations/src",
   "compilerOptions": {
-    "deleteOutDir": true
+    "deleteOutDir": true,
+    "plugins": [
+      {
+        "name": "@nestjs/graphql",
+        "options": {
+          "typeFileNameSuffix": [
+            ".input.ts",
+            ".args.ts",
+            ".entity.ts",
+            ".model.ts"
+          ],
+          "introspectComments": true
+        }
+      }
+    ],
+    "webpack": true,
+    "tsConfigPath": "apps/charging-stations/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/charging-stations",
+  "projects": {
+    "charging-stations": {
+      "type": "application",
+      "root": "apps/charging-stations",
+      "entryFile": "main",
+      "sourceRoot": "apps/charging-stations/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/charging-stations/tsconfig.app.json"
+      }
+    },
+    "integration": {
+      "type": "application",
+      "root": "apps/integration",
+      "entryFile": "main",
+      "sourceRoot": "apps/integration/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/integration/tsconfig.app.json"
+      }
+    },
+    "gateway": {
+      "type": "application",
+      "root": "apps/gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/gateway/tsconfig.app.json"
+      }
+    }
   }
 }
