@@ -12,7 +12,7 @@ export class StationsService {
     return `This action returns all stations`;
   }
 
-  findOne(id: number) {
+  findOne(id: string) {
     return `This action returns a #${id} station`;
   }
 
