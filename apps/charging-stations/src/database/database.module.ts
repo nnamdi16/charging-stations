@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import Joi from 'joi';
 import { MongooseModule } from '@nestjs/mongoose';
-import { ENV } from 'src/common/constant';
+import { ENV } from '../common/constant';
 
 @Module({
   imports: [
