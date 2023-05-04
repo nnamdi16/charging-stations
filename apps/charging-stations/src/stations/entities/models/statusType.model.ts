@@ -19,3 +19,10 @@ export class StatusType {
   @Prop()
   title: string;
 }
+
+export type statusType = {
+  id: number;
+  isOperational: boolean;
+  isUserSelectable: boolean;
+  title: string;
+};
