@@ -23,3 +23,11 @@ export class ConnectionType {
   @Prop()
   title: string;
 }
+
+export type connectionType = {
+  id: number;
+  formalName: string;
+  isDiscontinued: boolean;
+  isObsolete: boolean;
+  title: string;
+};
