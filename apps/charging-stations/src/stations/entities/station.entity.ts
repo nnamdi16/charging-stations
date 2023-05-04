@@ -3,7 +3,7 @@ import { Prop, Schema, SchemaFactory, raw } from '@nestjs/mongoose';
 import { Exclude } from 'class-transformer';
 import { v4 as uuidv4 } from 'uuid';
 import { OperatorInfo } from './models/operatorInfo.model';
-import { StatusType } from './models/statusType.model';
+import { StatusType, statusType } from './models/statusType.model';
 import { AddressInfo } from './models/addressInfo.model';
 import { Connections } from './models/connections.model';
 import { Types, Document } from 'mongoose';
@@ -23,7 +23,7 @@ export class Station {
   @Prop(raw({ type: OperatorInfo, required: true }))
   operatorInfo: OperatorInfo;
 
-  @Field((type) => StatusType)
+  @Field(() => StatusType)
   @Prop(raw({ type: StatusType, required: true }))
   statusType: StatusType;
 
@@ -32,8 +32,8 @@ export class Station {
   addressInfo: AddressInfo;
 
   @Field((type) => [Connections])
-  @Prop(raw({ type: [Connections], required: true }))
-  connections: Connections[];
+  @Prop(raw({ type: Connections, required: true }))
+  connections: [Connections];
 }
 
 export type StationDocument = Station & Document<Types.ObjectId>;
