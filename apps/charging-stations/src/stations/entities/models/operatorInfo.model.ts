@@ -32,10 +32,6 @@ export class OperatorInfo {
   @Prop()
   isPrivateIndividual: boolean;
 
-  @Field((type) => AddressInfo)
-  @Prop(raw({ type: AddressInfo, required: true }))
-  addressInfo: string;
-
   @Field()
   @Prop()
   bookingURL: string;
