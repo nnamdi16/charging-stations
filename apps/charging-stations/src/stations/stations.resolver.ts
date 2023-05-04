@@ -9,7 +9,9 @@ export class StationsResolver {
   constructor(private readonly stationsService: StationsService) {}
 
   @Mutation(() => Station)
-  createStation(@Args('createStationInput') createStationInput: CreateStationInput) {
+  createStation(
+    @Args('createStationInput') createStationInput: CreateStationInput,
+  ) {
     return this.stationsService.create(createStationInput);
   }
 
@@ -19,13 +21,18 @@ export class StationsResolver {
   }
 
   @Query(() => Station, { name: 'station' })
-  findOne(@Args('id', { type: () => Int }) id: number) {
+  findOne(@Args('id') id: string) {
     return this.stationsService.findOne(id);
   }
 
   @Mutation(() => Station)
-  updateStation(@Args('updateStationInput') updateStationInput: UpdateStationInput) {
-    return this.stationsService.update(updateStationInput.id, updateStationInput);
+  updateStation(
+    @Args('updateStationInput') updateStationInput: UpdateStationInput,
+  ) {
+    return this.stationsService.update(
+      updateStationInput.id,
+      updateStationInput,
+    );
   }
 
   @Mutation(() => Station)
