@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { CreateChargerDto } from './dto/create-charger.dto';
 import { UpdateChargerDto } from './dto/update-charger.dto';
-import { sendRequestToAPI } from 'src/common/util';
+import { sendRequestToAPI } from './common/util';
 
 @Injectable()
 export class ChargersService {
